@@ -1,0 +1,5 @@
+<h1>Edit Bug</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.bug_path(@conn, :update, @bug)) %>
+
+<span><%= link "Back", to: Routes.bug_path(@conn, :index) %></span>

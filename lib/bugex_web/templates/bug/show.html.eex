@@ -1,0 +1,18 @@
+<h1>Show Bug</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @bug.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @bug.description %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.bug_path(@conn, :edit, @bug) %></span>
+<span><%= link "Back", to: Routes.bug_path(@conn, :index) %></span>

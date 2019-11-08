@@ -1,0 +1,28 @@
+<h1>Listing Bugs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for bug <- @bugs do %>
+    <tr>
+      <td><%= bug.name %></td>
+      <td><%= bug.description %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.bug_path(@conn, :show, bug) %></span>
+        <span><%= link "Edit", to: Routes.bug_path(@conn, :edit, bug) %></span>
+        <span><%= link "Delete", to: Routes.bug_path(@conn, :delete, bug), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Bug", to: Routes.bug_path(@conn, :new) %></span>
